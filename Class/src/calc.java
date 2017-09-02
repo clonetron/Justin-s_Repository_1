@@ -32,7 +32,7 @@ public class calc {
 		 catch (Exception e)
 		{
 			System.out.println("That's not a number, please try again");
-			
+			break;
 		}
 		
 		timer.timer1();
