@@ -4,10 +4,9 @@ public class WhoWins {
 
 	public static void main(String[] args) {
 		
-		int a;
-		int b;
+		 int a;
+		 int b;
 		
-		int rand = ((int)(Math.random()*2 + 1));
 		
 		
 		System.out.println("Please type the first team");
@@ -29,24 +28,30 @@ public class WhoWins {
 			e.printStackTrace();
 		}
 		
-		switch((int)(Math.random()*2 + 1)) {
+	
+		if (a == 696 || b == 696) {
+			System.out.println("Circuit Breakers win!");
+			
+		}
 		
-		case  1:
+			else 
+			switch((int)(Math.random()*2 + 1)) {
+			
+			case  1:
 			System.out.println(a + " has won");
 			break;
 		
-		case 2:
+			case 2:
 			System.out.println(b + " has won");
 			break;
 			
-		default: 
+			default: 
 			System.out.println("If you got this message, you really messed up the program");
+			break;
 			
-		}
-		}
-		
-			
-
+		// System.out.println("Circuit Breakers win!");
 	}
 
+	}
+}
 
