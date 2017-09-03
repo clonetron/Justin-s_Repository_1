@@ -38,18 +38,18 @@ public class WhoWins {
 			switch((int)(Math.random()*2 + 1)) {
 			
 			case  1:
-			System.out.println(a + " has won");
+			System.out.println("Team " + a + " has won!");
 			break;
 		
 			case 2:
-			System.out.println(b + " has won");
+			System.out.println("Team " + b + " has won!");
 			break;
 			
 			default: 
 			System.out.println("If you got this message, you really messed up the program");
 			break;
 			
-		// System.out.println("Circuit Breakers win!");
+		
 	}
 
 	}
