@@ -27,7 +27,7 @@ public class Main {
 		if (a <= 4) {
 		System.out.println("Warning : Short passwords are not recommended.");
 		}
-		else System.out.println("Your word will be " + a +" letters long");
+		else System.out.println("Your word will be " + a +" characters long");
 		
 		try {
 			Thread.sleep(400);
@@ -36,7 +36,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Generating word, please wait");
+		System.out.println("Generating password, please wait");
 		
 		try {
 			Thread.sleep(400);
