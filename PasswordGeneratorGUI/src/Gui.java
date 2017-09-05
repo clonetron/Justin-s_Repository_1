@@ -121,12 +121,7 @@ public class Gui {
 				 System.out.println("Numeric on");
 			}
 		});
-		rdbtnNewRadioButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				
-			}
-		});
+		
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
 		rdbtnNewRadioButton.setBounds(15, 100, 103, 29);
@@ -187,7 +182,7 @@ public class Gui {
 	
 	
 	if (numeric) {
-		        password.setText(Double.toString(Math.random()*60 + 1));
+		        password.setText(Integer.toString((int)(Math.random()*60 + 1)));
 		System.out.println("123");
 	}
 	
