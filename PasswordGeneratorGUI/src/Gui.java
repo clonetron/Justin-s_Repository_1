@@ -200,58 +200,14 @@ public class Gui {
 	
 	
 	if (numeric) {
-<<<<<<< HEAD
-=======
 		randomizer.randomNumber();
 	}
-	
+																		
 	if (alphabet) {
 		randomizer.randomAlphabet();
->>>>>>> refs/remotes/origin/master
-		
-		for(int i = 0; i < 13; i++) {
-//			String alphabet = "abcdefghijklmnopqrstuvwxyz";
-//			char blah = alphabet.charAt(rand.nextInt(26));
-			int blah = (rand.nextInt(9));
-			password.setText(password.getText() + blah); 
-			System.out.print(blah);
-		}
-			try {
-				Thread.sleep(200);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
-			
-			
-			
-		}
-																	
-	
-	
-<<<<<<< HEAD
-	if (alphabet) {
-		for(int i = 0; i < 4; i++) {
-		String alphabet = "abcdefghijklmnopqrstuvwxyz";
-		char blah = alphabet.charAt(rand.nextInt(alphabet.length()));
-		password.setText(password.getText() + blah);
-		
-		
-	}}
-=======
->>>>>>> refs/remotes/origin/master
+	}
 	if (alphanum) {
-<<<<<<< HEAD
-		for(int i = 0; i < 13; i++) {
-			String alphabet = "abdefghijklmnopqrstuvwxyz1234567890";
-			char blah = alphabet.charAt(rand.nextInt(alphabet.length()));
-			password.setText(password.getText() + blah);
-			
-		}
-=======
 		randomizer.randomAlphaNum();
->>>>>>> refs/remotes/origin/master
 	}
 		
 		
