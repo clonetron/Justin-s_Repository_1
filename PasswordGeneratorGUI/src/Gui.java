@@ -185,9 +185,7 @@ public class Gui {
 	
 	
 	if (numeric) {
-<<<<<<< HEAD
 		        randomizer.randome();
-=======
 		for(int i = 0; i < 26; i++) {
 			String alphabet = "abcdefghijklmnopqrstuvwxyz";
 			char blah = alphabet.charAt(rand.nextInt(26));
@@ -195,7 +193,6 @@ public class Gui {
 		
 //		password.setText(Integer.toString((int)(Math.random()*60 + 1)));
 //		System.out.println("123");
->>>>>>> branch 'master' of https://github.com/clonetron/Justin-s_Repository_1
 	}
 	
 	if (alphabet) {
