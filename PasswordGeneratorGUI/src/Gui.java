@@ -157,9 +157,11 @@ public class Gui {
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Alphanumeric ( recommended)"); 	// alphanumeric selected
 		rdbtnNewRadioButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				alphanum = true;
 				numeric = false;
 				  alphabet = false;
-				 alphanum = true;
+				
 				 System.out.println("alphanum on");
 				
 				
@@ -180,24 +182,49 @@ public class Gui {
 	}
 	public void presser() {										// presser method
 		
-	
+	if (password.getText() != null) {
+		password.setText(null);
+	}
 	
 	
 	if (numeric) {
-		for(int i = 0; i < 26; i++) {
-			String alphabet = "abcdefghijklmnopqrstuvwxyz";
-			char blah = alphabet.charAt(rand.nextInt(26));
-			System.out.print(blah);
 		
-//		password.setText(Integer.toString((int)(Math.random()*60 + 1)));
-//		System.out.println("123");
-	}
+		for(int i = 0; i < 13; i++) {
+//			String alphabet = "abcdefghijklmnopqrstuvwxyz";
+//			char blah = alphabet.charAt(rand.nextInt(26));
+			int blah = (rand.nextInt(9));
+			password.setText(password.getText() + blah); 
+			System.out.print(blah);
+		}
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+			
+			
+			
+		}
+																	
+	
 	
 	if (alphabet) {
-		password.setText("abc");
-	}	
+		for(int i = 0; i < 4; i++) {
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		char blah = alphabet.charAt(rand.nextInt(alphabet.length()));
+		password.setText(password.getText() + blah);
+		
+		
+	}}
 	if (alphanum) {
-		password.setText("abc123");
+		for(int i = 0; i < 13; i++) {
+			String alphabet = "abdefghijklmnopqrstuvwxyz1234567890";
+			char blah = alphabet.charAt(rand.nextInt(alphabet.length()));
+			password.setText(password.getText() + blah);
+			
+		}
 	}
 		
 		
@@ -209,5 +236,5 @@ public class Gui {
 		
 	}
 }
-}
+
 
