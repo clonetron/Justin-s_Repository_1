@@ -185,21 +185,18 @@ public class Gui {
 	
 	
 	if (numeric) {
-		        randomizer.randome();
-		for(int i = 0; i < 26; i++) {
-			String alphabet = "abcdefghijklmnopqrstuvwxyz";
-			char blah = alphabet.charAt(rand.nextInt(26));
-			System.out.print(blah);
+		randomizer.randomNumber();
+	}
+	
+	if (alphabet) {
+		randomizer.randomAlphabet();
 		
 //		password.setText(Integer.toString((int)(Math.random()*60 + 1)));
 //		System.out.println("123");
 	}
 	
-	if (alphabet) {
-		password.setText("abc");
-	}	
 	if (alphanum) {
-		password.setText("abc123");
+		randomizer.randomAlphaNum();
 	}
 		
 		
@@ -211,5 +208,5 @@ public class Gui {
 		
 	}
 }
-}
+
 
