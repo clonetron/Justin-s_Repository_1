@@ -21,6 +21,7 @@ public class Gui {
 	public boolean numeric;
 	public boolean alphabet;
 	public boolean alphanum;
+	public static Random rand = new Random();
 	
 	public int calculation;
 	private JFrame frame;
@@ -58,10 +59,11 @@ public class Gui {
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 800, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Password Generator");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 44));
 		lblNewLabel.setBounds(15, 16, 764, 48);
 		frame.getContentPane().add(lblNewLabel);
@@ -177,13 +179,23 @@ public class Gui {
 		
 		
 	}
-	public void presser() {
+	public void presser() {										// presser method
 		
-	Random r = new Random();
+	
 	
 	
 	if (numeric) {
+<<<<<<< HEAD
 		        randomizer.randome();
+=======
+		for(int i = 0; i < 26; i++) {
+			String alphabet = "abcdefghijklmnopqrstuvwxyz";
+			char blah = alphabet.charAt(rand.nextInt(26));
+			System.out.print(blah);
+		
+//		password.setText(Integer.toString((int)(Math.random()*60 + 1)));
+//		System.out.println("123");
+>>>>>>> branch 'master' of https://github.com/clonetron/Justin-s_Repository_1
 	}
 	
 	if (alphabet) {
@@ -202,5 +214,5 @@ public class Gui {
 		
 	}
 }
-
+}
 
