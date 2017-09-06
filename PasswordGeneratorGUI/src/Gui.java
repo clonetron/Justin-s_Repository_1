@@ -14,6 +14,8 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.datatransfer.*;
+import java.awt.Toolkit;
 
 public class Gui {
 
@@ -22,6 +24,7 @@ public class Gui {
 	public boolean alphabet;
 	public boolean alphanum;
 	public static Random rand = new Random();
+	public static JLabel Copied = new JLabel("Copied to Clipboard!");
 	
 	public int calculation;
 	private JFrame frame;
@@ -74,8 +77,10 @@ public class Gui {
 			public void actionPerformed(ActionEvent arg0) {
 				
 //				randomizer.randome();
-				
+				Copied.setVisible(true);
+				Copied.setEnabled(true);
 				presser();
+				
 //				
 //			if (numeric) {
 //				
@@ -109,6 +114,7 @@ public class Gui {
 		frame.getContentPane().add(GeneratePassword);
 		
 		password = new JTextField();
+		password.setEditable(false);
 		password.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 42));
 		password.setBounds(15, 165, 764, 62);
 		frame.getContentPane().add(password);
@@ -171,6 +177,12 @@ public class Gui {
 		rdbtnNewRadioButton_2.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
 		rdbtnNewRadioButton_2.setBounds(263, 100, 275, 29);
 		frame.getContentPane().add(rdbtnNewRadioButton_2);
+		
+		Copied.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 12));
+		Copied.setBounds(666, 236, 113, 24);
+		Copied.setVisible(false);
+		Copied.setEnabled(false);
+		frame.getContentPane().add(Copied);
 	}
 	{
 
@@ -188,6 +200,14 @@ public class Gui {
 	
 	
 	if (numeric) {
+<<<<<<< HEAD
+=======
+		randomizer.randomNumber();
+	}
+	
+	if (alphabet) {
+		randomizer.randomAlphabet();
+>>>>>>> refs/remotes/origin/master
 		
 		for(int i = 0; i < 13; i++) {
 //			String alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -210,6 +230,7 @@ public class Gui {
 																	
 	
 	
+<<<<<<< HEAD
 	if (alphabet) {
 		for(int i = 0; i < 4; i++) {
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -218,13 +239,19 @@ public class Gui {
 		
 		
 	}}
+=======
+>>>>>>> refs/remotes/origin/master
 	if (alphanum) {
+<<<<<<< HEAD
 		for(int i = 0; i < 13; i++) {
 			String alphabet = "abdefghijklmnopqrstuvwxyz1234567890";
 			char blah = alphabet.charAt(rand.nextInt(alphabet.length()));
 			password.setText(password.getText() + blah);
 			
 		}
+=======
+		randomizer.randomAlphaNum();
+>>>>>>> refs/remotes/origin/master
 	}
 		
 		
