@@ -107,6 +107,7 @@ public class Gui {
 		frame.getContentPane().add(GeneratePassword);
 		
 		password = new JTextField();
+		password.setEditable(false);
 		password.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 42));
 		password.setBounds(15, 165, 764, 62);
 		frame.getContentPane().add(password);
@@ -182,8 +183,7 @@ public class Gui {
 	
 	
 	if (numeric) {
-		        password.setText(Integer.toString((int)(Math.random()*60 + 1)));
-		System.out.println("123");
+		        randomizer.randome();
 	}
 	
 	if (alphabet) {
