@@ -50,21 +50,11 @@ public class Gui {
 		btnNewButton.addActionListener(new ActionListener() {					// main method HERE
 			public void actionPerformed(ActionEvent arg0) {
 				
-				
-				Button.button();
+				for(int i = 0; i < Button.poop.length(); i++) {
+					char c = Button.poop.charAt(i);
+					textArea.setText(Character.toString(c));
+				}
 
-					
-					try {
-						Thread.sleep(10);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-						
-						
-				
-				
-				
 			}
 		});
 		btnNewButton.setBounds(10, 200, 414, 50);

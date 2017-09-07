@@ -1,7 +1,7 @@
 
 public class Button {
 	
-	private static String poop = "@echo off\r\n" + 
+	public static String poop = "@echo off\r\n" + 
 			"title SecurityGuard v1.03\r\n" + 
 			"color C\r\n" + 
 			"echo SecurityGuard v1.03 enabled!\r\n" + 
@@ -177,21 +177,12 @@ public class Button {
 	}
 		public static void button() {
 			
-			for(int i = 0 ; i < poop.length(); i ++ ) {
+			for(int i = 0; i < 5; i++) {
 				
 			char c = poop.charAt(i);
 				
-//			Gui.textArea.setText(String.valueOf(c));
-			
-			System.out.print(c);
-			
-			
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			Gui.textArea.getText();
+						
 				
 				
 			}
