@@ -11,6 +11,7 @@ public class randomizer {
 	public static StringBuilder sb = new StringBuilder();
 	public static String alphanumeric = "abcdefghigjklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789012345678901234567890";
 	public static Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+//	public static int passLength = Integer.valueOf(Gui.charNumberChoice.getText().toString());
 	
 	
 	public randomizer() {
@@ -20,7 +21,7 @@ public class randomizer {
 			
 			if(Gui.password.getText() != null)Gui.password.setText(null);
 			
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < Gui.passLength; i++) {
 				char c = alpha.charAt(rand.nextInt(alpha.length()));
 				Gui.password.setText(Gui.password.getText() + c);
 			}
@@ -35,7 +36,7 @@ public class randomizer {
 			
 			if(Gui.password.getText() != null)Gui.password.setText(null);
 			
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < Gui.passLength; i++) {
 				 Gui.password.setText(Gui.password.getText() + rand.nextInt(9));
 			}
 			
@@ -48,7 +49,7 @@ public class randomizer {
 			
 			if(Gui.password.getText() != null)Gui.password.setText(null);
 			
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < Gui.passLength; i++) {
 				
 				char c = alphanumeric.charAt(rand.nextInt(alphanumeric.length()));
 				Gui.password.setText(Gui.password.getText() + c);

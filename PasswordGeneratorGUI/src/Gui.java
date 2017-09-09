@@ -16,6 +16,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.datatransfer.*;
 import java.awt.Toolkit;
+import javax.swing.JTextArea;
+import javax.swing.JFormattedTextField;
 
 public class Gui {
 
@@ -30,6 +32,9 @@ public class Gui {
 	private JFrame frame;
 	static JTextField password;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	public static JFormattedTextField charNumberChoice = new JFormattedTextField();
+	public static JButton Next = new JButton("Next");
+	public static int passLength;
 
 	/**
 	 * Launch the application.
@@ -64,6 +69,7 @@ public class Gui {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
+		
 		
 		JLabel lblNewLabel = new JLabel("Password Generator");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -112,16 +118,20 @@ public class Gui {
 		});
 		GeneratePassword.setBounds(549, 80, 211, 69);
 		frame.getContentPane().add(GeneratePassword);
+		GeneratePassword.setEnabled(false);
+		GeneratePassword.setVisible(false);
 		
 		password = new JTextField();
 		password.setEditable(false);
+		password.setEnabled(false);
+		password.setVisible(false);
 		password.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 42));
 		password.setBounds(15, 165, 764, 62);
 		frame.getContentPane().add(password);
 		password.setColumns(10);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Numeric");						//numeric selected
-		rdbtnNewRadioButton.addActionListener(new ActionListener() {
+		JRadioButton Numeric = new JRadioButton("Numeric");						//numeric selected
+		Numeric.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				numeric = true;
 				  alphabet = false;
@@ -130,13 +140,15 @@ public class Gui {
 			}
 		});
 		
-		buttonGroup.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
-		rdbtnNewRadioButton.setBounds(15, 100, 103, 29);
-		frame.getContentPane().add(rdbtnNewRadioButton);
+		buttonGroup.add(Numeric);
+		Numeric.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
+		Numeric.setBounds(15, 100, 103, 29);
+		frame.getContentPane().add(Numeric);
+		Numeric.setEnabled(false);
+		Numeric.setVisible(false);
 			
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Alphabetized");				//alpha selected
-		rdbtnNewRadioButton_1.addActionListener(new ActionListener() {
+		JRadioButton Alphabetized = new JRadioButton("Alphabetized");				//alpha selected
+		Alphabetized.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				numeric = false;
 				  alphabet = true;
@@ -155,13 +167,15 @@ public class Gui {
 				
 			
 		
-		buttonGroup.add(rdbtnNewRadioButton_1);
-		rdbtnNewRadioButton_1.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
-		rdbtnNewRadioButton_1.setBounds(125, 100, 131, 29);
-		frame.getContentPane().add(rdbtnNewRadioButton_1);
+		buttonGroup.add(Alphabetized);
+		Alphabetized.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
+		Alphabetized.setBounds(125, 100, 131, 29);
+		frame.getContentPane().add(Alphabetized);
+		Alphabetized.setEnabled(false);
+		Alphabetized.setVisible(false);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Alphanumeric ( recommended)"); 	// alphanumeric selected
-		rdbtnNewRadioButton_2.addActionListener(new ActionListener() {
+		JRadioButton Alphanumeric = new JRadioButton("Alphanumeric ( recommended)"); 	// alphanumeric selected
+		Alphanumeric.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				alphanum = true;
@@ -173,16 +187,89 @@ public class Gui {
 				
 			}
 		});
-		buttonGroup.add(rdbtnNewRadioButton_2);
-		rdbtnNewRadioButton_2.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
-		rdbtnNewRadioButton_2.setBounds(263, 100, 275, 29);
-		frame.getContentPane().add(rdbtnNewRadioButton_2);
+		buttonGroup.add(Alphanumeric);
+		Alphanumeric.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 16));
+		Alphanumeric.setBounds(263, 100, 275, 29);
+		frame.getContentPane().add(Alphanumeric);
+		Alphanumeric.setEnabled(false);
+		Alphanumeric.setVisible(false);
 		
 		Copied.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 12));
 		Copied.setBounds(666, 236, 113, 24);
 		Copied.setVisible(false);
 		Copied.setEnabled(false);
 		frame.getContentPane().add(Copied);
+		
+		
+		charNumberChoice.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
+		charNumberChoice.setBounds(290, 141, 166, 48);
+		frame.getContentPane().add(charNumberChoice);
+		
+		JLabel charLabel = new JLabel("Please enter the number of characters you'd like your password to be...");
+		charLabel.setBounds(152, 76, 527, 53);
+		frame.getContentPane().add(charLabel);
+		
+		
+		JButton Restart = new JButton("Restart");
+		Restart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				charLabel.setVisible(true);
+				charLabel.setEnabled(true);
+				charNumberChoice.setVisible(true);
+				Next.setEnabled(true);
+				Next.setVisible(true);
+				Alphabetized.setEnabled(false);
+				Alphabetized.setVisible(false);
+				Alphanumeric.setEnabled(false);
+				Alphanumeric.setVisible(false);
+				Numeric.setVisible(false);
+				Numeric.setEnabled(false);
+				password.setEnabled(false);
+				password.setVisible(false);
+				GeneratePassword.setEnabled(false);
+				GeneratePassword.setVisible(false);
+				Restart.setEnabled(false);
+				Restart.setVisible(false);
+				
+				charNumberChoice.setText(null);
+			}
+		});
+		Restart.setEnabled(false);
+		Restart.setVisible(false);
+		Restart.setBounds(15, 239, 117, 29);
+		frame.getContentPane().add(Restart);
+		
+		Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				charLabel.setVisible(false);
+				charLabel.setEnabled(false);
+				charNumberChoice.setVisible(false);
+				Next.setEnabled(false);
+				Next.setVisible(false);
+				Alphabetized.setEnabled(true);
+				Alphabetized.setVisible(true);
+				Alphanumeric.setEnabled(true);
+				Alphanumeric.setVisible(true);
+				Numeric.setVisible(true);
+				Numeric.setEnabled(true);
+				password.setEnabled(true);
+				password.setVisible(true);
+				GeneratePassword.setEnabled(true);
+				GeneratePassword.setVisible(true);
+				Restart.setEnabled(true);
+				Restart.setVisible(true);
+				
+				
+				passLength = Integer.valueOf(charNumberChoice.getText());
+				password.setText(null);
+				
+				
+			}
+		});
+		Next.setBounds(320, 229, 117, 40);
+		frame.getContentPane().add(Next);
+		
 	}
 	{
 
